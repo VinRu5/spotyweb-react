@@ -1,10 +1,11 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Playlists () {
     return (
         <ul>
             <li>
-                <i class="fas fa-plus-square"></i>
+                <FontAwesomeIcon icon={['fas', 'plus-square']} size="2x"/>
                 Crea Playlist
             </li>
             <li>Nome Playlist</li>
