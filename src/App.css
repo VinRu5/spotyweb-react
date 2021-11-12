@@ -1,38 +1,422 @@
-.App {
-  text-align: center;
+ul {
+    list-style: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.around-center {
+    justify-content: space-around;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.center {
+    justify-content: center;
+    align-items: center; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* layout */
+.app {
+    height: 100vh;
+    color: #fff;
+    font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.app main {
+    height: calc(100vh - 90px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+    height: 90px;
+    background-color: #282828;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .sidebar {
+    background-color: #000;
+    width: 230px;
+    height: 100%;
+    overflow: hidden;
+    color: #717171;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+main .content {
+    background-color: #141922;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* topbar */
+
+.content .topbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 90px;
+    width: calc(100% - 230px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button {
+    font-weight: bold;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    
+    margin-right: 15px;
+}
+
+.button:hover {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* sidebar */
+.logo img {
+    height: 40px;
+    color: #fff;
+}
+
+.logo img:last-child {
+    display: none;
+}
+
+.sidebar-item, .playlist, .sidebar-content ul li {
+    padding: 8px 20px;
+}
+
+.sidebar .logo {
+    padding: 15px; 
+}
+
+.side-green {
+    border-left: 3px solid #ADFF2F;
+    color: #ccc;
+}
+
+.sidebar-item svg {
+    height: 25px;
+    vertical-align: middle;
+}
+
+.sidebar-item svg path{
+    fill: #717171;
+}
+
+.side-green svg path {
+    fill: #ccc;
+}
+
+.side-green:hover svg path {
+    fill: #fff;
+}
+
+.hover:hover, ul li:hover{
+    color: #fff;
+}
+
+.sidebar-item:hover svg path {
+    fill: #fff;
+}
+
+.sidebar-item {
+    font-weight: bold;
+}
+
+.playlist {
+    color: #fff;
+    font-weight: bold;
+}
+ 
+.sidebar-content ul li i {
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.install img {
+    height: 15px;
+    vertical-align: middle;
+}
+
+.install {
+    border-bottom: 1px solid #717171;
+    padding: 10px 20px;
+}
+
+.profile-img {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-color: #717171;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sidebar-profile .profile span {
+    padding: 0 5px;
+} 
+
+.profile-img img {
+    height: 25px;
+}
+
+.profile {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sidebar .sidebar-content {
+    overflow-y: auto;
+}
+
+.sidebar-item span {
+    display: inline-block;
+}
+
+/* main page */
+
+.content .main-page {
+    padding: 100px 15px 50px 15px;
+}
+
+.main-page .top-page {
+    justify-content: center;
+}
+
+.main-page .top-page ul{
+    justify-content: center;
+    padding-bottom: 40px;
+    color: #717171;
+}
+
+.main-page .top-page ul li {
+    margin-left: 20px;
+}
+
+.main-page .top-page ul li:first-child {
+    margin-left: 0;
+}
+
+.main-page .top-page ul li:hover {
+    color: #fff;
+}
+
+.under-green {
+    height: 2px;
+    width: 30px;
+    background-color: #ADFF2F;
+    margin: 2px auto;
+}
+
+/* sezione album */
+.title-section {
+    padding: 30px 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.album {
+    padding: 5px;
+    text-align: center;
+}
+
+.album-img {
+    position: relative;
+}
+
+.album-img img {
+    width: 100%;
+}
+
+.album-title {
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.album-subtitle {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #717171;
+}
+
+.opacity {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    opacity: 0;
+}
+
+.album-img i {
+    font-size: 60px;
+}
+
+.album:hover .opacity {
+    opacity: 1;
+}
+
+.album .radius {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* footer e navbar */
+nav.side {
+    flex-basis: 210px;
+}
+
+nav.player {
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+/* artist lato sinistro */
+.artist-img img {
+    width: 100%;
+}
+
+.artist-name {
+    font-weight: bold;
+}
+
+.artist-track {
+    font-size: 10px;
+    color: #717171;
+}
+
+.artist-track:hover {
+    text-decoration: underline;
+}
+
+.preferences {
+    color: #717171;
+    padding: 5px;
+}
+
+.preferences i {
+    padding: 0 3px;
+}
+
+/* player parte centrale */
+.player-top { 
+    padding-bottom: 10px;
+    display: flex;
+}
+
+.player-top i {
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+#play {
+    font-size: 30px;
+    flex-basis: 50px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+#play:hover {
+    font-size: 35px;
+}
+
+.player-bottom {
+    padding-bottom: 15px;
+    display: flex;
+}
+
+[class^="time-"] {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.time-start {
+    margin-right: 10px;
+}
+
+.time-end {
+    margin-left: 10px;
+}
+
+.bar {
+    background-color: #717171;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.progress {
+    background-color: #fff;
+    width: 20%;
+}
+
+.bar:hover .progress {
+    background-color: #ADFF2F;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: none;
+}
+
+.bar:hover .circle {
+    display: block;
+}
+
+.bar.progress.row {
+    align-content: center;
+    justify-content: flex-end;
+}
+
+
+/* media query */
+@media screen and (max-width: 576px) {
+    main .sidebar {
+        width: 60px;
+    }
+    
+    .sidebar-item span, .logo img:first-child, .playlist, .sidebar-content ul, .install span, .profile span{
+        display: none;
+    }
+
+    .install {
+        border-bottom: 0;
+    }
+
+    .logo img:last-child {
+        display: block;
+    }
+
+    .content .topbar {
+        width: calc(100% - 60px);
+    }
+
+    .sidebar .sidebar-content {
+        overflow-y: visible;
+    }
+
+    .sidebar-content, .sidebar-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
