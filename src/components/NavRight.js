@@ -7,7 +7,7 @@ export default function NavRight() {
                 <i class="fas fa-list-ul"></i>
                 <i class="fas fa-desktop"></i>
                 <i class="fas fa-volume-up"></i>
-                <div class="bar col-xs-4">
+                <div class="bar col-4">
                     <div class="row">
                         <div class="bar progress row">
                             <div class="circle"></div>

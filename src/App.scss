@@ -193,27 +193,35 @@ main .content {
     padding: 100px 15px 50px 15px;
 }
 
-.main-page .top-page {
-    justify-content: center;
+.top-page {
+   
+    ul{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+        color: #717171;
+        
+        li {
+            margin-left: 20px;
+            cursor: pointer;
+
+            &.clicked {
+                color:#fff;
+            }
+            
+            &:hover {
+                color: #fff;
+            }
+        }
+        
+        li:first-child {
+            margin-left: 0;
+        }
+        
+    }
+    
 }
 
-.main-page .top-page ul{
-    justify-content: center;
-    padding-bottom: 40px;
-    color: #717171;
-}
-
-.main-page .top-page ul li {
-    margin-left: 20px;
-}
-
-.main-page .top-page ul li:first-child {
-    margin-left: 0;
-}
-
-.main-page .top-page ul li:hover {
-    color: #fff;
-}
 
 .under-green {
     height: 2px;

@@ -13,7 +13,7 @@ export default function NavCenter() {
             </div>
             <div class="player-bottom center">
                 <div class="time-start">0:25</div>
-                <div class="bar col-xs-7">
+                <div class="bar col-7">
                     <div class="row">
                         <div class="bar progress row">
                             <div class="circle"></div>
