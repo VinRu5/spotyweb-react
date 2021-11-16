@@ -6,7 +6,11 @@ export default function Page() {
     return (
         <div class="main-page">
             <TopPage/>
-            <Section/>
+            <Section sectionName="album"/>
+
+            <Section sectionName="playlist"/>
+                
+            <Section sectionName="artist"/>
         </div>
     );
 }
