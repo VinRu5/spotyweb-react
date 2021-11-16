@@ -8,14 +8,14 @@ export default function Artist(props) {
 
     return (
 
-        <div class="album col-6 col-md-3 col-lg-2">
-            <div class="album-img radius">
-                <img src={artist.picture} alt="mix" />
-                <div class="opacity center">
-                    <i class="far fa-play-circle absolute-center"></i>
+        <div className="album col-6 col-md-3 col-lg-2">
+            <div className="album-img radius">
+                <img src={artist.picture} alt={`foto di ${artist.name}`} />
+                <div className="opacity center">
+                    <i className="far fa-play-circle absolute-center"></i>
                 </div>
             </div>
-            <div class="album-title">{artist.name}</div>
+            <div className="album-title">{artist.name}</div>
         </div>
     );
 }

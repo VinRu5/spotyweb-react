@@ -4,7 +4,7 @@ import logoSmall from "../img/logo-small.svg";
 
 export default function Logo() {
     return (
-        <div class="logo">
+        <div className="logo">
             <img src={logo} alt="logo" />
             <img src={logoSmall} alt="logo" />
         </div>

@@ -15,7 +15,7 @@ export default function SidebarContent() {
             
             <SearchButton/>
             <LibraryButton/>
-            <div class ="playlist">PLAYLIST</div>
+            <div className ="playlist">PLAYLIST</div>
             <Playlists/>
         </div>
     );

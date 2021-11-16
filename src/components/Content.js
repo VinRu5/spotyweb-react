@@ -4,7 +4,7 @@ import Topbar from "./Topbar";
 
 export default function Content() {
     return (
-        <div class="content col">
+        <div className="content col">
 
             <Topbar/>
             <Page/>

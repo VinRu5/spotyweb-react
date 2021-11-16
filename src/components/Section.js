@@ -30,14 +30,12 @@ export default function Section(props) {
 
     }
 
-    console.log('section', sectionList);
-
 
     return (
         <section>
 
-            <div class="title-section">{ titleSection }</div>
-            <div class="row">
+            <div className="title-section">{ titleSection }</div>
+            <div className="row">
 
                 {
                     sectionList.map(track => {
