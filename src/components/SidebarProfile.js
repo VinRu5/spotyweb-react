@@ -4,7 +4,7 @@ export default function SidebarProfile() {
     return (
         <div className="sidebar-profile">
             <div className="install hover">
-                <img src="./img/download.svg" alt="download" />
+                <img src="../img/download.svg" alt="download" />
                 <span>Installa app</span>
             </div>
             <div className="profile">

@@ -1,20 +1,23 @@
-import React from "react";
-import HomeButton from "./HomeButton";
-import LibraryButton from "./LibraryButton";
+import React, { useContext } from "react";
+import { AppContext } from "../App";
+import ButtonSidebar from "./ButtonSidebar";
 import Logo from "./Logo";
 import Playlists from "./Playlists";
-import SearchButton from "./SearchButton";
 
 export default function SidebarContent() {
+
+    const { sidebarButton } = useContext(AppContext);
+
+
     return (
         <div className="sidebar-content">
 
             <Logo/>
-            
-            <HomeButton/>
-            
-            <SearchButton/>
-            <LibraryButton/>
+
+            {
+                sidebarButton.map(button=> <ButtonSidebar key={button.id} button={button} />)
+            }
+
             <div className ="playlist">PLAYLIST</div>
             <Playlists/>
         </div>
