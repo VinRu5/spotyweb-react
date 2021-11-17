@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Song from "./Song";
 
 
@@ -42,7 +42,7 @@ export default function SearchPage() {
     }
 
     return (
-        <div class="main-page">
+        <div className="main-page">
             <div className="row">
                 <input type="text" value={searchText} onChange={(e)=>handleSearchText(e.target.value)} />
                 <button className="btn" onClick={()=>handleSearch()} >

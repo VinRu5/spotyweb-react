@@ -51,6 +51,10 @@ const handleSidebarButton = (state, action)=> {
   return newState;
 }
 
+const handlePlaylists = (state, action) => {
+  return state
+}
+
 export const AppContext = React.createContext();
 
 function App() {
@@ -60,6 +64,7 @@ function App() {
   const [artistsList, setArtistsList] = useState([]);
   const [viewContent, setViewContent] = useState('home');
   const [sidebarButton, dispatchSidebarButton] = useReducer(handleSidebarButton, initialButtonSidebar);
+  const [playlists, dispatchPlaylists] = useReducer(handlePlaylists, []);
 
   useEffect(() => {
 
@@ -87,6 +92,8 @@ function App() {
           dispatchSidebarButton: dispatchSidebarButton,
           viewContent: viewContent,
           setViewContent: setViewContent,
+          playlists: playlists,
+          dispatchPlaylists: dispatchPlaylists,
         }
       }
     >

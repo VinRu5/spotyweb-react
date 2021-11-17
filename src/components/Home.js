@@ -4,7 +4,7 @@ import TopPage from "./TopPage";
 
 export default function Home() {
     return (
-        <div class="main-page">
+        <div className="main-page">
 
             <TopPage/>
             <Section sectionName="album"/>
