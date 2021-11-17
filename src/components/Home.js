@@ -2,9 +2,10 @@ import React from "react";
 import Section from "./Section";
 import TopPage from "./TopPage";
 
-export default function Page() {
+export default function Home() {
     return (
         <div class="main-page">
+
             <TopPage/>
             <Section sectionName="album"/>
 

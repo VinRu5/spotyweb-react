@@ -11,23 +11,31 @@ library.add(faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical);
 const initialButtonSidebar = [
   {
     id: 1,
-    text: 'home',
+    text: 'Home',
     logo: ['fas', 'home'],
     clicked: true,
   },
   {
     id: 2,
-    text: 'cerca',
+    text: 'Cerca',
     logo: ['fas', 'search'],
     clicked: false,
   },
   {
     id: 3,
-    text: 'la tua libreria',
+    text: 'La tua libreria',
     logo: ['fas', 'grip-vertical'],
+    clicked: false,
+  },
+  {
+    id: 4,
+    text: 'Crea Playlist',
+    logo: ['fas', 'plus-square'],
     clicked: false,
   }
 ];
+
+
 
 const handleSidebarButton = (state, action)=> {
   const indexClick = state.findIndex(item=>item.id === action.id);
@@ -50,7 +58,7 @@ function App() {
   const [songsList, setSongsList] = useState([]);
   const [albumsList, setAlbumsList] = useState([]);
   const [artistsList, setArtistsList] = useState([]);
-  const [viewContent, setViewContent] = useState('home'); //=> da sistemare per visualizzazionecontenuto pagina
+  const [viewContent, setViewContent] = useState('home');
   const [sidebarButton, dispatchSidebarButton] = useReducer(handleSidebarButton, initialButtonSidebar);
 
   useEffect(() => {
@@ -77,6 +85,8 @@ function App() {
           artistsList: artistsList,
           sidebarButton: sidebarButton,
           dispatchSidebarButton: dispatchSidebarButton,
+          viewContent: viewContent,
+          setViewContent: setViewContent,
         }
       }
     >
