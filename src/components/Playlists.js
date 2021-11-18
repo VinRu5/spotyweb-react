@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AppContext } from "../App";
+
 
 export default function Playlists () {
+
+    const { playlists } = useContext(AppContext)
+
     return (
         <ul>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
-            <li>Nome Playlist</li>
+            {
+                playlists.map(playlist=>
+                    <li>{playlist.name}</li>
+                )
+            }
+            
+            
         </ul>
     );
 }

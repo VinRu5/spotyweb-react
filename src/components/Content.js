@@ -25,8 +25,6 @@ export default function Content() {
         }
     }
 
-    console.log('view',viewPage());
-
     return (
         <div className="content col">
 

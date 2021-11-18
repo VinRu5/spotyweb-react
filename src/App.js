@@ -52,7 +52,16 @@ const handleSidebarButton = (state, action)=> {
 }
 
 const handlePlaylists = (state, action) => {
-  return state
+
+  let emptyPlaylist = {
+    name: '',
+    songs: [],
+    visibleList: false,
+  }
+
+  let newState = [...state, {...emptyPlaylist, name: action.payload}]
+  
+  return newState
 }
 
 export const AppContext = React.createContext();
