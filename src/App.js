@@ -1,12 +1,12 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical } from '@fortawesome/free-solid-svg-icons'
+import { faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical, faChevronCircleRight, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 import './App.scss';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import axios from 'axios';
 
-library.add(faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical);
+library.add(faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical, faChevronCircleRight,faChevronCircleDown);
 
 const initialButtonSidebar = [
   {
@@ -106,7 +106,8 @@ function App() {
         }
       }
     >
-      <div className="container-fluid app">
+      <div className="container-fluid app">ù
+        
         <Main />
         <Footer />
       </div>

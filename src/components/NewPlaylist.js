@@ -28,7 +28,7 @@ export default function NewPlaylist() {
                     <FontAwesomeIcon icon={['fas', 'plus-square']} size="3x" />
                 </button>
             </div>
-            <div>
+            <div className="row">
                 {
                     playlists.length > 0 &&
                         playlists.map((playlist, index)=>
