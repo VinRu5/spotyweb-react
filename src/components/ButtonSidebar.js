@@ -11,7 +11,6 @@ export default function ButtonSidebar(props) {
     const handleSidebarButton = (button) => {
         dispatchSidebarButton(button);
         setViewContent(button.text);
-        dispatchShowSection({ view: 'section', payload: null });
     }
 
     const sideGreen =  button.clicked ? 'side-green' : '';

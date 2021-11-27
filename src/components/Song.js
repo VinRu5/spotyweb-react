@@ -1,6 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import logo from "../img/logo-small.svg";
 import Menu from "./Menu";
 
 export default function Song(props) {
@@ -11,7 +11,7 @@ export default function Song(props) {
 
     const viewMenu = () => {
         if (showNow) {
-            return <Menu handleCloseShow={()=>handleCloseShow()}/>
+            return <Menu handleCloseShow={() => handleCloseShow()} />
         }
     }
 
@@ -19,21 +19,36 @@ export default function Song(props) {
         setShowNow(true);
     }
 
-    const handleCloseShow = ()=> {
+    const handleCloseShow = () => {
         setShowNow(false);
     }
 
-    return(
-        <div className="album col-xs-6 col-md-3 col-lg-2">
+    const songCover = () => {
+        if (song.hasOwnProperty('album')) {
+            return song.album.cover
+        } else {
+            return logo
+        }
+    }
 
-            {
-                viewMenu()
-            }
-            <div className="album-img" onClick={() => handleShow()}>
-                <img src={song.album.cover} alt={`cover di ${song.title}`}/>          
+    return (
+        <div className="song col-12">
+            <div className="row align-items-center">
+            
+            <div className="album-img col-1">
+                <img src={songCover()} alt={`cover di ${song.title}`} />
             </div>
+            <div className="col">
             <div className="album-title">{song.title}</div>
             <div className="album-subtitle">{song.artist.name}</div>
+            </div>
+            <div className="col-1">
+                    <FontAwesomeIcon icon={['fas', 'bars']} size="2x" onClick={() => handleShow()}/>
+                    {
+                        viewMenu()
+                    }
+            </div>
+            </div>
         </div>
     );
 }

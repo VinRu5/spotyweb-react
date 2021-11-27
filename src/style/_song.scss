@@ -1,0 +1,12 @@
+.song {
+    border: 1px solid $white-trasparent;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin-bottom: 6px;
+    color: $white-trasparent;
+
+    &:hover {
+        border: 1px solid $white;
+        color: $white;
+    }
+}
