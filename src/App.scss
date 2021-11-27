@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./style/variables";
 @import "./style/playlist";
 @import "./style/menu";
 
@@ -19,7 +20,7 @@ ul {
 /* layout */
 .app {
     height: 100vh;
-    color: #fff;
+    color: $white;
     font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 12px;
 }
@@ -72,7 +73,7 @@ main .content {
 .button {
     font-weight: bold;
     padding: 10px 30px;
-    border: 2px solid #fff;
+    border: 2px solid $white;
     border-radius: 30px;
     
     margin-right: 15px;
@@ -86,7 +87,7 @@ main .content {
 /* sidebar */
 .logo img {
     height: 40px;
-    color: #fff;
+    color: $white;
 }
 
 .logo img:last-child {
@@ -102,7 +103,7 @@ main .content {
 }
 
 .side-green {
-    border-left: 3px solid #ADFF2F;
+    border-left: 3px solid $green-lime;
     color: #ccc;
 }
 
@@ -120,15 +121,15 @@ main .content {
 }
 
 .side-green:hover svg path {
-    fill: #fff;
+    fill: $white;
 }
 
 .hover:hover, ul li:hover{
-    color: #fff;
+    color: $white;
 }
 
 .sidebar-item:hover svg path {
-    fill: #fff;
+    fill: $white;
 }
 
 .sidebar-item {
@@ -136,7 +137,7 @@ main .content {
 }
 
 .playlist {
-    color: #fff;
+    color: $white;
     font-weight: bold;
 }
  
@@ -178,7 +179,7 @@ main .content {
     padding: 10px 20px;
     font-size: 14px;
     font-weight: bold;
-    color: #fff;
+    color: $white;
 }
 
 .sidebar .sidebar-content {
@@ -208,11 +209,11 @@ main .content {
             cursor: pointer;
 
             &.clicked {
-                color:#fff;
+                color: $white;
             }
             
             &:hover {
-                color: #fff;
+                color: $white;
             }
         }
         
@@ -228,7 +229,7 @@ main .content {
 .under-green {
     height: 2px;
     width: 30px;
-    background-color: #ADFF2F;
+    background-color: $green-lime;
     margin: 2px auto;
 }
 
@@ -242,6 +243,7 @@ main .content {
 .album {
     padding: 5px;
     text-align: center;
+    position: relative;
 }
 
 .album-img {
@@ -373,18 +375,18 @@ nav.player {
 }
 
 .progress {
-    background-color: #fff;
+    background-color: $white;
     width: 20%;
 }
 
 .bar:hover .progress {
-    background-color: #ADFF2F;
+    background-color: $green-lime;
 }
 
 .circle {
     width: 10px;
     height: 10px;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 50%;
     display: none;
 }

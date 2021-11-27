@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import Home from "./Home";
 import Library from "./Library";
-import Menu from "./Menu";
 import NewPlaylist from "./NewPlaylist";
 import SearchPage from "./SearchPage";
 import Topbar from "./Topbar";
@@ -30,7 +29,6 @@ export default function Content() {
         <div className="content col">
 
             <Topbar/>
-            <Menu/>
             {viewPage()}
 
         </div>
