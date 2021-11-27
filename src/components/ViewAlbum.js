@@ -5,21 +5,19 @@ import Song from './Song';
 
 export default function ViewAlbum() {
 
-    const { showSection } = useContext(AppContext);
+    const { contentSection } = useContext(AppContext);
 
     const [album, setAlbum] = useState({});
     const [songs, setSongs] = useState([]);
 
-    const albumId = showSection.payload;
-
     useEffect(() => {
-        axios.get(`https://api.deezer.com/album/${albumId}`)
+        axios.get(`https://api.deezer.com/album/${contentSection}`)
         .then(res=>{
             setAlbum(res.data);
            
             setSongs(res.data.tracks.data);
         })
-    }, [albumId]);
+    }, [contentSection]);
 
     
 

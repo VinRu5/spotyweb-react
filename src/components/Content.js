@@ -23,6 +23,8 @@ export default function Content() {
                 return <Library/>
             case 'crea playlist':
                 return <NewPlaylist/>
+            case 'album':
+                return <ViewAlbum/>
     
         }
     }

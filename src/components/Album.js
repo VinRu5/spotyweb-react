@@ -7,11 +7,12 @@ export default function Album(props) {
 
     const { album } = props;
 
-    const { dispatchShowSection, dispatchSidebarButton } = useContext(AppContext);
+    const { dispatchContentSection, dispatchSidebarButton, setViewContent } = useContext(AppContext);
 
     const handleNewView = (id) => {
-        dispatchShowSection({ view: 'album', payload: id })
+        dispatchContentSection(id)
         dispatchSidebarButton({id: 0})
+        setViewContent('album')
     }
 
     return(
