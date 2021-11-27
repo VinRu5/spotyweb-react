@@ -1,17 +1,24 @@
 import React from 'react'
 import Playlists from './Playlists'
 
-export default function Menu() {
+export default function Menu(props) {
+
+    const { handleCloseShow } = props;
+
     return (
-        <div className="menu">
-            <div>
+        <ul className="menu">
+            
+            <li>
                 Ascolta brano
-            </div>
-            <div>
+            </li>
+            <li>
                 Aggiungi a Playlist
-            </div>
+            </li>
             <Playlists/>
-        </div>
+            <li onClick={()=> handleCloseShow()}>
+                Chiudi
+            </li>
+        </ul>
     )
 }
 

@@ -11,12 +11,16 @@ export default function Song(props) {
 
     const viewMenu = () => {
         if (showNow) {
-            return <Menu />
+            return <Menu handleCloseShow={()=>handleCloseShow()}/>
         }
     }
 
     const handleShow = () => {
         setShowNow(true);
+    }
+
+    const handleCloseShow = ()=> {
+        setShowNow(false);
     }
 
     return(

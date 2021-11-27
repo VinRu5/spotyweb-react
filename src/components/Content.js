@@ -5,6 +5,7 @@ import Library from "./Library";
 import NewPlaylist from "./NewPlaylist";
 import SearchPage from "./SearchPage";
 import Topbar from "./Topbar";
+import ViewAlbum from "./ViewAlbum";
 
 
 
@@ -22,6 +23,7 @@ export default function Content() {
                 return <Library/>
             case 'crea playlist':
                 return <NewPlaylist/>
+    
         }
     }
 

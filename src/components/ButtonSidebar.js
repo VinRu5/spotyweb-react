@@ -4,13 +4,14 @@ import { AppContext } from "../App";
 
 export default function ButtonSidebar(props) {
 
-    const { dispatchSidebarButton, setViewContent } = useContext(AppContext);
+    const { dispatchSidebarButton, setViewContent, dispatchShowSection } = useContext(AppContext);
 
     const { button } = props;
 
     const handleSidebarButton = (button) => {
         dispatchSidebarButton(button);
         setViewContent(button.text);
+        dispatchShowSection({ view: 'section', payload: null });
     }
 
     const sideGreen =  button.clicked ? 'side-green' : '';

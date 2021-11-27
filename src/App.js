@@ -45,8 +45,9 @@ const handleSidebarButton = (state, action)=> {
       clicked: false,
     }
   })
-
-  newState.splice(indexClick, 1, {...action, clicked: true});
+  if(action.id !== 0) {
+    newState.splice(indexClick, 1, {...action, clicked: true});
+  }
 
   return newState;
 }
@@ -64,6 +65,16 @@ const handlePlaylists = (state, action) => {
   return newState
 }
 
+const handleShowSection = (state, action)=> {
+  
+  if(action.view !== 'section') {
+    const newState = action;
+    return newState;
+  } else {
+    return state;
+  }
+}
+
 export const AppContext = React.createContext();
 
 function App() {
@@ -74,6 +85,7 @@ function App() {
   const [viewContent, setViewContent] = useState('home');
   const [sidebarButton, dispatchSidebarButton] = useReducer(handleSidebarButton, initialButtonSidebar);
   const [playlists, dispatchPlaylists] = useReducer(handlePlaylists, []);
+  const [showSection, dispatchShowSection] = useReducer(handleShowSection, {view: 'section', payload: null});
 
   useEffect(() => {
 
@@ -103,6 +115,8 @@ function App() {
           setViewContent: setViewContent,
           playlists: playlists,
           dispatchPlaylists: dispatchPlaylists,
+          showSection: showSection,
+          dispatchShowSection: dispatchShowSection,
         }
       }
     >
