@@ -67,7 +67,7 @@ const handlePlaylists = (state, action) => {
 
 const handleContentSection = (state, action)=> {
 
-    const newState = action;
+    const newState = action.payload;
     return newState;
 
 }

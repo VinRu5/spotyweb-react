@@ -3,14 +3,27 @@
     border-radius: 3px;
     box-shadow: 0 0 3px $border-trasparent;
     max-width: 200px;
-    min-width: 100px;
-    padding: 6px;
+    min-width: 150px;
     color: $black;
     background-color: $white;
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 100%;
+    right: 10%;
     z-index: 1001;
+    font-size: 14px;
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding: 3px 6px;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover {
+            color: $white;
+            background-color: $black-content;
+        }
+    }
 }
 
 // ^sistemare grafica menu

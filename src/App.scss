@@ -32,7 +32,7 @@ ul {
 
 footer {
     height: 90px;
-    background-color: #282828;
+    background-color: $black-footer;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@ main .sidebar {
     width: 230px;
     height: 100%;
     overflow: hidden;
-    color: #717171;
+    color: $grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,7 +51,7 @@ main .sidebar {
 
 
 main .content {
-    background-color: #141922;
+    background-color: $black-content;
     height: 100%;
     overflow-y: scroll;
 }
@@ -114,7 +114,7 @@ main .content {
 }
 
 .sidebar-item svg path{
-    fill: #717171;
+    fill: $grey;
 }
 
 .side-green svg path {
@@ -154,7 +154,7 @@ main .content {
 }
 
 .install {
-    border-bottom: 1px solid #717171;
+    border-bottom: 1px solid $grey;
     padding: 10px 20px;
 }
 
@@ -162,7 +162,7 @@ main .content {
     display: inline-block;
     height: 30px;
     width: 30px;
-    background-color: #717171;
+    background-color: $grey;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
@@ -203,7 +203,7 @@ main .content {
         display: flex;
         justify-content: center;
         padding-bottom: 40px;
-        color: #717171;
+        color: $grey;
         
         li {
             margin-left: 20px;
@@ -264,7 +264,7 @@ main .content {
 .album-subtitle {
     padding-top: 10px;
     font-size: 14px;
-    color: #717171;
+    color: $grey;
 }
 
 .opacity {
@@ -312,7 +312,7 @@ nav.player {
 
 .artist-track {
     font-size: 10px;
-    color: #717171;
+    color: $grey;
 }
 
 .artist-track:hover {
@@ -320,7 +320,7 @@ nav.player {
 }
 
 .preferences {
-    color: #717171;
+    color: $grey;
     padding: 5px;
 }
 
@@ -370,7 +370,7 @@ nav.player {
 }
 
 .bar {
-    background-color: #717171;
+    background-color: $grey;
     height: 3px;
     border-radius: 2px;
 }

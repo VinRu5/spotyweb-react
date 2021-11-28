@@ -6,6 +6,7 @@ import NewPlaylist from "./NewPlaylist";
 import SearchPage from "./SearchPage";
 import Topbar from "./Topbar";
 import ViewAlbum from "./ViewAlbum";
+import ViewArtist from "./ViewArtist";
 
 
 
@@ -25,6 +26,8 @@ export default function Content() {
                 return <NewPlaylist/>
             case 'album':
                 return <ViewAlbum/>
+            case 'artist':
+                return <ViewArtist/>
     
         }
     }

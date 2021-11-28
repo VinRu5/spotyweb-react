@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 export default function Song(props) {
 
-    const { song } = props;
+    const { song, albumCover } = props;
 
     const [showNow, setShowNow] = useState(false);
 
@@ -27,27 +27,27 @@ export default function Song(props) {
         if (song.hasOwnProperty('album')) {
             return song.album.cover
         } else {
-            return logo
+            return albumCover
         }
     }
 
     return (
         <div className="song col-12">
             <div className="row align-items-center">
-            
-            <div className="album-img col-1">
-                <img src={songCover()} alt={`cover di ${song.title}`} />
-            </div>
-            <div className="col">
-            <div className="album-title">{song.title}</div>
-            <div className="album-subtitle">{song.artist.name}</div>
-            </div>
-            <div className="col-1">
-                    <FontAwesomeIcon icon={['fas', 'bars']} size="2x" onClick={() => handleShow()}/>
+
+                <div className="album-img col-2 col-sm-3 col-md-2 col-lg-1">
+                    <img src={songCover()} alt={`cover di ${song.title}`} />
+                </div>
+                <div className="col">
+                    <div className="album-title">{song.title}</div>
+                    <div className="album-subtitle">{song.artist.name}</div>
+                </div>
+                <div className="col-2 col-md-2 col-lg-1 position-relative">
+                    <FontAwesomeIcon icon={['fas', 'bars']} size="2x" onClick={() => handleShow()} />
                     {
                         viewMenu()
                     }
-            </div>
+                </div>
             </div>
         </div>
     );

@@ -8,16 +8,22 @@ export default function ViewAlbum() {
     const { contentSection } = useContext(AppContext);
 
     const [album, setAlbum] = useState({});
+    const [albumID, setAlbumID] = useState(null);
     const [songs, setSongs] = useState([]);
 
+    if(contentSection.type === 'album') {
+        setAlbumID(contentSection.payload);
+    }
+
     useEffect(() => {
-        axios.get(`https://api.deezer.com/album/${contentSection}`)
+        
+        axios.get(`https://api.deezer.com/album/${albumID}`)
         .then(res=>{
             setAlbum(res.data);
            
             setSongs(res.data.tracks.data);
         })
-    }, [contentSection]);
+    }, [albumID]);
 
     
 
@@ -26,7 +32,13 @@ export default function ViewAlbum() {
             <h1>{album.title}</h1>
             {
                 songs.length > 0 &&
-                songs.map(song=> <Song key={song.id} song={song}/>)
+                songs.map(song=> 
+                    <Song 
+                        key={song.id} 
+                        song={song} 
+                        albumCover={album.cover}
+                    />
+                )
             }
         </div>
     )
