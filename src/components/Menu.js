@@ -3,12 +3,12 @@ import Playlists from './Playlists'
 
 export default function Menu(props) {
 
-    const { handleCloseShow } = props;
+    const { handleCloseShow, handlePlayed } = props;
 
     return (
         <ul className="menu">
             
-            <li>
+            <li onClick={()=> handlePlayed()}>
                 Ascolta brano
             </li>
             <li>

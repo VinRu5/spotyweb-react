@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AppContext } from "../App";
 import logo from "../img/logo-small.svg";
 import Menu from "./Menu";
 
@@ -7,11 +8,13 @@ export default function Song(props) {
 
     const { song, albumCover } = props;
 
+    const { dispatchPlaySong } = useContext(AppContext);
+
     const [showNow, setShowNow] = useState(false);
 
     const viewMenu = () => {
         if (showNow) {
-            return <Menu handleCloseShow={() => handleCloseShow()} />
+            return <Menu handleCloseShow={() => handleCloseShow()} handlePlayed={()=> handlePlayed()} />
         }
     }
 
@@ -21,6 +24,17 @@ export default function Song(props) {
 
     const handleCloseShow = () => {
         setShowNow(false);
+    }
+
+    const handlePlayed = ()=> {
+        dispatchPlaySong(
+            {
+                artist: song.artist.name,
+                songTitle: song.title,
+                cover: songCover(),
+            }
+        );
+        handleCloseShow();
     }
 
     const songCover = () => {

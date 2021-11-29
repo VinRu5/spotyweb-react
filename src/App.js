@@ -1,12 +1,12 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical, faChevronCircleRight, faChevronCircleDown, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faPlusSquare, faLongArrowAltDown,faPlayCircle, faHome, faSearch, faGripVertical, faChevronCircleRight, faChevronCircleDown, faBars } from '@fortawesome/free-solid-svg-icons'
 import './App.scss';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import axios from 'axios';
 
-library.add(faPlusSquare, faPlayCircle, faHome, faSearch, faGripVertical, faChevronCircleRight, faChevronCircleDown, faBars);
+library.add(faPlusSquare, faLongArrowAltDown,faPlayCircle, faHome, faSearch, faGripVertical, faChevronCircleRight, faChevronCircleDown, faBars);
 
 const initialButtonSidebar = [
   {
@@ -65,11 +65,9 @@ const handlePlaylists = (state, action) => {
   return newState
 }
 
-const handleContentSection = (state, action)=> {
-
-    const newState = action;
-    return newState;
-
+const handlePlaySong = (state, action)=> {
+  console.log('play',action)
+  return action
 }
 
 export const AppContext = React.createContext();
@@ -83,6 +81,7 @@ function App() {
   const [contentID, setContentID] = useState(null);
   const [sidebarButton, dispatchSidebarButton] = useReducer(handleSidebarButton, initialButtonSidebar);
   const [playlists, dispatchPlaylists] = useReducer(handlePlaylists, []);
+  const [playSong, dispatchPlaySong] = useReducer(handlePlaySong, {artist: '', songTitle: '', cover: ''});
   
 
   useEffect(() => {
@@ -115,6 +114,8 @@ function App() {
           dispatchPlaylists: dispatchPlaylists,
           contentID: contentID,
           setContentID: setContentID,
+          playSong: playSong,
+          dispatchPlaySong: dispatchPlaySong,
         }
       }
     >
