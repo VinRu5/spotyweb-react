@@ -67,7 +67,7 @@ const handlePlaylists = (state, action) => {
 
 const handleContentSection = (state, action)=> {
 
-    const newState = action.payload;
+    const newState = action;
     return newState;
 
 }
@@ -80,9 +80,10 @@ function App() {
   const [albumsList, setAlbumsList] = useState([]);
   const [artistsList, setArtistsList] = useState([]);
   const [viewContent, setViewContent] = useState('home');
+  const [contentID, setContentID] = useState(null);
   const [sidebarButton, dispatchSidebarButton] = useReducer(handleSidebarButton, initialButtonSidebar);
   const [playlists, dispatchPlaylists] = useReducer(handlePlaylists, []);
-  const [contentSection, dispatchContentSection] = useReducer(handleContentSection, null);
+  
 
   useEffect(() => {
 
@@ -112,8 +113,8 @@ function App() {
           setViewContent: setViewContent,
           playlists: playlists,
           dispatchPlaylists: dispatchPlaylists,
-          contentSection: contentSection,
-          dispatchContentSection: dispatchContentSection,
+          contentID: contentID,
+          setContentID: setContentID,
         }
       }
     >

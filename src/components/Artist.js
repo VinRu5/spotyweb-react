@@ -5,10 +5,10 @@ export default function Artist(props) {
 
     const { artist } = props;
 
-    const { dispatchContentSection, dispatchSidebarButton, setViewContent } = useContext(AppContext);
+    const { setContentID, dispatchSidebarButton, setViewContent } = useContext(AppContext);
 
     const handleViewArtist = (id)=> {
-        dispatchContentSection({type: 'artist', payload: id});
+        setContentID(id);
         dispatchSidebarButton({id: 0});
         setViewContent('artist');
     }
