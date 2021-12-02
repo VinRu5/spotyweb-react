@@ -16,7 +16,7 @@ export default function NewPlaylist() {
     }
 
     const handleMakePlaylist = ()=> {
-        dispatchPlaylists({operation: 'add', payload: playlistName});
+        dispatchPlaylists({type: 'name', payload: playlistName});
         setPlaylistName('');
     }
 

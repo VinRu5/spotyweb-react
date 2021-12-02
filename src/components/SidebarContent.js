@@ -8,7 +8,7 @@ export default function SidebarContent() {
 
     const { sidebarButton } = useContext(AppContext);
 
-
+const handlePlaylist = ()=> {console.log('side')}
     return (
         <div className="sidebar-content">
 
@@ -19,7 +19,7 @@ export default function SidebarContent() {
             }
 
             <div className ="playlist">PLAYLIST</div>
-            <Playlists/>
+            <Playlists handlePlaylist={()=> handlePlaylist()}/>
         </div>
     );
 }

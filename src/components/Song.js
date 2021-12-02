@@ -8,13 +8,17 @@ export default function Song(props) {
 
     const { song, albumCover } = props;
 
-    const { dispatchPlaySong } = useContext(AppContext);
+    const { dispatchPlaySong, dispatchPlaylists } = useContext(AppContext);
 
     const [showNow, setShowNow] = useState(false);
 
     const viewMenu = () => {
         if (showNow) {
-            return <Menu handleCloseShow={() => handleCloseShow()} handlePlayed={()=> handlePlayed()} />
+            return <Menu 
+                handleCloseShow={() => handleCloseShow()} 
+                handlePlayed={()=> handlePlayed()}
+                handleAddToPlaylist={(index)=> handleAddToPlaylist(index)}
+            />
         }
     }
 
@@ -24,6 +28,11 @@ export default function Song(props) {
 
     const handleCloseShow = () => {
         setShowNow(false);
+    }
+
+    const handleAddToPlaylist = (index)=> {
+        dispatchPlaylists({type: 'songs', payload: song.id, playlist: index});
+        handleCloseShow();
     }
 
     const handlePlayed = ()=> {

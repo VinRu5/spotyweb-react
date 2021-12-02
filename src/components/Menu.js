@@ -3,7 +3,8 @@ import Playlists from './Playlists'
 
 export default function Menu(props) {
 
-    const { handleCloseShow, handlePlayed } = props;
+    const { handleCloseShow, handlePlayed, handleAddToPlaylist } = props;
+    
 
     return (
         <ul className="menu">
@@ -14,7 +15,7 @@ export default function Menu(props) {
             <li>
                 Aggiungi a Playlist
             </li>
-            <Playlists/>
+            <Playlists handlePlaylist={(index)=> handleAddToPlaylist(index)}/>
             <li onClick={()=> handleCloseShow()}>
                 Chiudi
             </li>

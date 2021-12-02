@@ -59,14 +59,27 @@ const handlePlaylists = (state, action) => {
     songs: [],
     visibleList: false,
   }
+console.log('action-play', action)
+  let newState;
+  switch(action.type) {
+    case 'name':
+      newState = [...state, {...emptyPlaylist, name: action.payload}]
+      return newState
+    
+    case 'songs':
+      
+      newState = [...state];
+      let oldPlaylist = newState[action.playlist];
+      
+      newState.splice(action.playlist, 1, {...oldPlaylist, songs: [...oldPlaylist.songs, action.payload]});
+      
+      return newState
 
-  let newState = [...state, {...emptyPlaylist, name: action.payload}]
-  
-  return newState
+  }
 }
 
 const handlePlaySong = (state, action)=> {
-  console.log('play',action)
+
   return action
 }
 

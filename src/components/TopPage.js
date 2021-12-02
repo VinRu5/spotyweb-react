@@ -33,14 +33,14 @@ export default function TopPage () {
     const [navList, setNavList] = useState(originalNavList);
 
     const handleNavList = (index)=> {
-        console.log(index);
+
         const originalItem = navList[index];
         const newList = originalNavList;
         newList.splice(index, 1, {...originalItem, clicked: true});
         setNavList([...newList]);
     }
 
-    console.log(navList);
+    
     return (
         <div className="top-page container">
             <ul>
